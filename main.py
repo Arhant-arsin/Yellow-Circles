@@ -2,15 +2,15 @@ from random import randint
 import sys
 
 from PyQt5.QtCore import Qt
-from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QBrush, QColor
 from PyQt5.QtWidgets import QWidget, QApplication
+from UI import Ui_Form
 
 
-class Example(QWidget):
+class Example(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self), self.retranslateUi(self)
         self.pb_rand.clicked.connect(self.onClick)
 
     def onClick(self):
