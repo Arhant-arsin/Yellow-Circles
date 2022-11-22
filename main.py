@@ -22,7 +22,8 @@ class Example(QWidget, Ui_Form):
     def paintEvent(self, event):
         qp = QPainter()
         qp.begin(self)
-        qp.setBrush(QBrush(QColor(255, 255, 0), Qt.SolidPattern))
+        c1, c2, c3 = randint(0, 255), randint(0, 255), randint(0, 255)
+        qp.setBrush(QBrush(QColor(c1, c2, c3), Qt.SolidPattern))
         size = randint(10, 150)
         x, y = randint(0, 300), randint(0, 300)
         qp.drawEllipse(x, y, size, size)
